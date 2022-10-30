@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App (Attempt 3)</title>
+
+    <!-- Link for Google Font to be added to styling -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+
+    <!-- Link for Stylesheet -->
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+
+    <!-- This section will is the main section of the web page -->
+    <main class="todo-app">
+
+        <!-- The below section is where user will enter the date, new to do task & click the add task button. -->
+        <section class="create-todo-section">
+            <h1>To Do List</h1>
+            <h3>Hello, what's on your list today?</h3>
+            <form id="todo-form">
+                <!-- Input for user to insert date - Date Required -->
+                <input id="input-date" type="date" name="date" required>
+                <!-- The below is where the user will add their todo list item -->
+                <input id="input-todo" type="text" name="input-todo" placeholder="Add new task..." required>
+
+                <!-- The below button is where user will click & add their todo item -->
+                <input type="submit" value="Add Task">
+
+            </form>
+        </section>
+
+        <!-- The below section is where the to do list will appear, user will be able to edit, delete & sort. -->
+        <section class="todo-list-section">
+            <h2>Things To Do</h2>
+
+            <!-- The users created todo list items will appear below -->
+            <div class="todo-list" id="todo-list"></div>
+            <!-- <label>
+                <input type="radio">
+                <span class="checkthrough"></span>
+            </label> -->
+        </section>
+
+        <!-- The below button will sort the todo list items in alphabetical order (A-Z) -->
+        <button onclick="sortItemsInAlphabeticalOrder()" id="alphabetical" name="sortItemsInAlphabeticalOrder"
+            value="sort">Sort A-Z</button>
+    </main>
+
+    <!-- Link for JavaScript sheet -->
+    <!-- <script src="script.js"></script> -->
+</body>
+
+</html>
