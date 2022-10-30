@@ -1,0 +1,58 @@
+:root {
+    --AddTask: #27ae60;
+    --Edit: #0984e3;
+    --Delete: #d63031;
+    --Sort: #f1c40f;
+    --Light: #ecf0f1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 450;
+}
+
+/* Styling for the body section */
+body {
+    background-image: url("body-background.jpg");
+    background-size: cover;
+    /* background-position: ; */
+    padding: 5rem;
+    width: 100%;
+}
+
+h1 {
+    display: block;
+    width: 100%;
+    font-size: 4rem;
+    padding: 3rem;
+    color: var(--Light);
+    font-family: 'Poppins' sans-serif;
+}
+
+h3 {
+    display: block;
+    width: 100%;
+    font-size: 3rem;
+    padding: 3rem;
+    color: var(--Light);
+    font-family: 'Poppins' sans-serif;
+}
+
+h2 {
+    display: block;
+    width: 100%;
+    font-size: 2rem;
+    padding: 3rem;
+    color: var(--Light);
+    font-family: 'Poppins' sans-serif;
+}
+
+section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
