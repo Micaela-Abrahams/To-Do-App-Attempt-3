@@ -4,6 +4,7 @@
     --Delete: #d63031;
     --Sort: #f1c40f;
     --Light: #ecf0f1;
+    --LightGrey: #bdc3c7;
     --Dark: #556173;
     --Border: #d3d3d3;
     --MoreDark: black;
@@ -66,6 +67,7 @@ section {
     font-size: 1.125rem;
     color: var(--MoreDark);
     border-radius: 0.3rem;
+    border-color: var(--LightGrey);
     border-style: none;
     padding: 1rem;
     cursor: pointer;
@@ -107,4 +109,17 @@ section {
 }
 
 /* Styling for the todo item to appear with a strike-through line */
-.strike-through
+.strike-through {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 0.3rem;
+    border: 2px solid --LightGrey;
+    transition: 0.2s ease-in-out;
+}
+
+#input-todo input {
+    width: 50%;
+}
