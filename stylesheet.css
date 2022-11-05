@@ -116,6 +116,34 @@ input[type="checkbox"] {
 }
 
 /* Styling for the todo item to appear with a strike-through line */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .checkthrough {
     display: flex;
     align-items: center;
@@ -144,7 +172,7 @@ input:checked~.checkthrough::after {
     opacity: 1;
 }
 
-.todo-list .list {
+.todoList .list {
     margin: 1rem 0;
 }
 
