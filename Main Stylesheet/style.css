@@ -14,7 +14,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Red Hat Display', sans-serif;
     font-weight: 450;
 }
 
@@ -31,7 +31,7 @@ h2 {
     display: block;
     width: 100%;
     font-size: 4rem;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Red Hat Display', sans-serif;
     padding: 1rem;
     color: var(--Light);
 }
@@ -43,7 +43,7 @@ h3 {
     font-size: 3rem;
     padding: 1rem;
     color: var(--Light);
-    font-family: 'Poppins' sans-serif;
+    font-family: 'Red Hat Display', sans-serif;
 }
 
 /* Style for the H4 heading */
@@ -53,7 +53,7 @@ h4 {
     font-size: 1.5rem;
     padding: 1rem;
     color: var(--Light);
-    font-family: 'Poppins' sans-serif;
+    font-family: 'Red Hat Display', sans-serif;
 }
 
 section {
@@ -66,6 +66,7 @@ section {
 /* Styling for calendar where user will select date entry */
 #dueDate {
     width: 30%;
+    font-family: 'Red Hat Display', sans-serif;
     font-size: 1.125rem;
     color: var(--MoreDark);
     border-radius: 0.3rem;
@@ -219,3 +220,7 @@ section {
     opacity: 0.70;
     transform: scale(1.1);
 }
+
+/* MEDIA QUERIES */
+
+@media screen and () {}
