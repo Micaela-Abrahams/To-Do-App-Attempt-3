@@ -1,0 +1,75 @@
+:root {
+    --AddTask: #27ae60;
+    --Edit: #0984e3;
+    --Delete: #d63031;
+    --Sort: #f1c40f;
+    --Light: #ecf0f1;
+    --LightGrey: #bdc3c7;
+    --Dark: #556173;
+    --Border: #d3d3d3;
+    --MoreDark: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 450;
+}
+
+/* Styling for the body section */
+body {
+    background-image: url("images/body-background.jpg");
+    background-size: cover;
+    padding: 5rem;
+    width: 100%;
+}
+
+/* Style for the H1 heading */
+h2 {
+    display: block;
+    width: 100%;
+    font-size: 4rem;
+    padding: 1rem;
+    color: var(--Light);
+    font-family: 'Poppins' sans-serif;
+}
+
+/* Style for the H3 heading */
+h3 {
+    display: block;
+    width: 100%;
+    font-size: 3rem;
+    padding: 1rem;
+    color: var(--Light);
+    font-family: 'Poppins' sans-serif;
+}
+
+/* Style for the H4 heading */
+h4 {
+    display: block;
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 1rem;
+    color: var(--Light);
+    font-family: 'Poppins' sans-serif;
+}
+
+section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+/* Styling for calendar where user will select date entry */
+#dueDate {
+    width: 30%;
+    font-size: 1.125rem;
+    color: var(--MoreDark);
+    border-radius: 0.3rem;
+    border-style: none;
+    padding: 1rem;
+    cursor: pointer;
+}
