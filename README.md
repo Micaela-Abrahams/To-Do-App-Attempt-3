@@ -1,6 +1,6 @@
 # To-Do-App-Attempt-3
 
-# _To Do App_
+# _To Do App (JavaScript)_
 
 ## Description:
 _This web application allows users to create a To Do List._
