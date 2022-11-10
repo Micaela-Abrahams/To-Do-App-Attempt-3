@@ -7,7 +7,7 @@ window.addEventListener('load', () => {
 	newTaskForm.addEventListener('submit', e => {
 		e.preventDefault();
 
-		//Create task object
+		//Task Object
 		const task = {
 			content: e.target.elements.taskInput.value,
 			date: e.target.elements.dueDate.value,
@@ -15,10 +15,10 @@ window.addEventListener('load', () => {
             createdAt: new Date().getTime()
 		}
 
-		//store new tasks to tasks array
+		//New tasks to be stored - Array
         tasks.push(task);
 
-        //store taskarray to local storage
+        //Task array to be stored to Local Storage 
 		localStorage.setItem('tasks', JSON.stringify(tasks));
 
 		// Reset the form
@@ -125,7 +125,7 @@ function displayTasks () {
 		}) 
 
 
-		//Add functionality for 'Delete' button
+		//Functionality for 'Delete' Button
 		deleteButton.addEventListener('click', (e) => {
 			tasks = tasks.filter(t => t != task);
 			localStorage.setItem('tasks', JSON.stringify(tasks));

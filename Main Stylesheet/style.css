@@ -132,6 +132,7 @@ section {
     flex: 1 1 0%;
 }
 
+/* Output for the To Do List */
 .taskItem .taskContent input {
     color: rgb(21, 21, 21);
     border-style: none;
@@ -139,7 +140,7 @@ section {
     width: auto;
 }
 
-/* */
+/*Date on the To Do List */
 .taskItem .taskDate {
     flex: 1 1 0%;
     padding: 0rem;
@@ -156,10 +157,6 @@ section {
     margin: auto;
     box-shadow: none;
 }
-
-/* .taskItem .taskDateBlank input {
-    display: none;
-} */
 
 .taskItem .actions {
     display: flex;
@@ -178,6 +175,7 @@ section {
     transition: 0.2s ease-in-out;
 }
 
+/* Hover Styling for the Edit & Delete*/
 .taskItem .actions button:hover {
     opacity: 0.75;
 }
