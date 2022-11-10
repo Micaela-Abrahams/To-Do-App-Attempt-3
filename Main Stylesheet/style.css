@@ -110,6 +110,7 @@ section {
 
 /* STYLING FOR THINGS TO DO SECTION */
 .output .taskItem {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -223,4 +224,56 @@ section {
 
 /* MEDIA QUERIES */
 
-@media screen and () {}
+/* Media Queries for Tablet Viewport */
+@media screen and (min-width:767px) {
+    .output .taskItem {
+        width: 105%;
+    }
+
+    body {
+        background-image: url("/images/body-background.jpg");
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .sortList button {
+        width: 50%;
+    }
+
+}
+
+/* Media Queries for Mobile View */
+/* @media screen and (min-width:425px) {
+    .output .taskItem {
+        width: 270%;
+    }
+
+    body {
+        background-image: url("/images/body-background.jpg");
+        background-size: cover;
+    }
+
+    #add {
+        width: 90%;
+    }
+
+    #taskInput {
+        width: 150%;
+    }
+
+    #dueDate {
+        width: 100%;
+    }
+
+    .sortList button {
+        margin-left: 300px;
+        width: 50%;
+    }
+
+    h3 {
+        font-size: 2rem;
+        width: 100%;
+    }
+} 

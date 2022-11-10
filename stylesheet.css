@@ -1,4 +1,9 @@
-:root {
+/* This Stylesheet is no longer in use, please refer to to the Main Stylesheet Folder */
+
+
+
+
+/* :root {
     --AddTask: #27ae60;
     --Edit: #0984e3;
     --Delete: #d63031;
@@ -8,65 +13,65 @@
     --Dark: #556173;
     --Border: #d3d3d3;
     --MoreDark: black;
-}
+} */
 
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     font-weight: 450;
-}
+} */
 
 
 /* Styling for the body section */
-body {
+/* body {
     background-image: url("images/body-background.jpg");
     background-size: cover;
     padding: 5rem;
     width: 100%;
-}
+} */
 
 /* Style for the H1 heading */
-h1 {
+/* h1 {
     display: block;
     width: 100%;
     font-size: 4rem;
     padding: 1rem;
     color: var(--Light);
     font-family: 'Poppins' sans-serif;
-}
+} */
 
 /* Style for the H3 heading */
 
-h3 {
+/* h3 {
     display: block;
     width: 100%;
     font-size: 3rem;
     padding: 1rem;
     color: var(--Light);
     font-family: 'Poppins' sans-serif;
-}
+} */
 
 /* Style for the H2 heading */
-h2 {
+/* h2 {
     display: block;
     width: 100%;
     font-size: 2rem;
     padding: 1rem;
     color: var(--Light);
     font-family: 'Poppins' sans-serif;
-}
+} */
 
-section {
+/* section {
     margin-top: 2rem;
     margin-bottom: 2rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-}
+} */
 
 /* Styling for calendar where user will select date entry */
-#date {
+/* #date {
     width: 30%;
     font-size: 1.125rem;
     color: var(--MoreDark);
@@ -74,10 +79,10 @@ section {
     border-style: none;
     padding: 1rem;
     cursor: pointer;
-}
+} */
 
 /* Styling for the input where user will type their todo item */
-.create-todo input[type="text"] {
+/* .create-todo input[type="text"] {
     display: flex;
     width: 50%;
     font-size: 1.125rem;
@@ -87,11 +92,11 @@ section {
     border-style: none;
     margin-top: 1rem;
     margin-bottom: 3rem;
-}
+} */
 
 
 /* Styling for the Add Task Button */
-.create-todo input[type="submit"] {
+/* .create-todo input[type="submit"] {
     width: 30%;
     font-size: 1.125rem;
     font-weight: 600;
@@ -102,22 +107,22 @@ section {
     color: var(--Light);
     cursor: pointer;
     transition: 0.2s ease-in-out;
-}
+} */
 
-input[type="radio"],
+/* input[type="radio"],
 input[type="checkbox"] {
     display: none;
-}
+} */
 
 /* Style to make the Add Task Button enlarge & change opacity */
-.create-todo input[type="submit"]:hover {
+/* .create-todo input[type="submit"]:hover {
     opacity: 0.70;
     transform: scale(1.1);
-}
+} */
 
 /* Styling for the todo item to appear with a strike-through line */
 
-.checkthrough {
+/* .checkthrough {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -126,13 +131,13 @@ input[type="checkbox"] {
     border-radius: 0.3rem;
     border: 2px solid --LightGrey;
     transition: 0.2s ease-in-out;
-}
+} */
 
-#input-content input {
+/* #input-content input {
     width: 50%;
-}
+} */
 
-.checkthrough::after {
+/* .checkthrough::after {
     content: '';
     display: block;
     border-radius: 0.3rem;
@@ -155,9 +160,9 @@ input:checked~.checkthrough::after {
     padding: 1rem;
     border-radius: 0.3rem;
     margin-bottom: 1rem;
-}
+} */
 
-.todo-item label {
+/* .todo-item label {
     display: block;
     margin-right: 1rem;
     cursor: pointer;
@@ -187,9 +192,9 @@ input:checked~.checkthrough::after {
     color: white;
     cursor: pointer;
     transition: 0.2s ease-in-out;
-}
+} */
 
-.todo-item .actions button:hover {
+/* .todo-item .actions button:hover {
     opacity: 0.75;
 }
 
@@ -205,10 +210,10 @@ input:checked~.checkthrough::after {
 .todo-item.done .todo-content input {
     text-decoration: line-through;
     color: var(--Dark);
-}
+} */
 
 /* Styling for the Sort A-Z Button */
-#alphabetically {
+/* #alphabetically {
     width: 30%;
     font-size: 1.125rem;
     font-weight: 600;
@@ -224,4 +229,4 @@ input:checked~.checkthrough::after {
 #alphabetically:hover {
     opacity: 0.70;
     transform: scale(1.1);
-}
+} */

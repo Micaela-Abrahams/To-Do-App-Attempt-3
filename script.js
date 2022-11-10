@@ -1,5 +1,5 @@
 
-// INITIAL JAVASCRIPT BELOW
+// JAVASCRIPT BELOW IS NOT BEING USED.
 
 // // Adding an event listener for the Load Event
 //     window.addEventListener('load', () => { 
