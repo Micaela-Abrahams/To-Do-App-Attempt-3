@@ -1,7 +1,5 @@
 # To-Do-App-Attempt-3
 
-# To-Do-App-Attempt-3
-
 # _To Do App_
 
 ## Description:
