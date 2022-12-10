@@ -1,17 +1,16 @@
 :root {
-    --AddTask: #27ae60;
     --Edit: #3095cf;
     --Delete: #83bfe2;
-    --Sort: #f1c40f;
     --Light: #ecf0f1;
     --LightGrey: #bdc3c7;
     --Dark: #556173;
     --Border: #d3d3d3;
     --MoreDark: black;
 
-    --LightGreen: #77b48a;
+    --LightGreen: hsl(139, 41%, 61%);
     --LightBlue: #6eb4de;
     --LightBlueBackground: #eaf4fa;
+    --BorderGlow: 0px 0px 10px rgb(131, 191, 226);
 }
 
 * {
@@ -78,7 +77,7 @@ section {
     color: var(--MoreDark);
     border-radius: 0.3rem;
     border-style: solid;
-    border-color: var(--LightBlue);
+    border-color: var(--LightGrey);
     padding: 1rem;
     cursor: pointer;
 }
@@ -92,7 +91,8 @@ section {
     color: var(--Dark);
     border-radius: 0.3rem;
     border-style: solid;
-    border-color: var(--LightBlue);
+    border-color: var(--LightGrey);
+    ;
     margin-top: 1rem;
     margin-bottom: 3rem;
 }
@@ -113,8 +113,8 @@ section {
 
 /* Style to make the Add Task Button enlarge & change opacity */
 #add:hover {
-    opacity: 0.90;
-    transform: scale(1.1);
+    opacity: 0.75;
+    /* transform: scale(1.1); */
 }
 
 /* STYLING FOR THINGS TO DO SECTION */
@@ -126,7 +126,7 @@ section {
     background-color: #FFF;
     padding: 1rem;
     border-radius: 0.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--BorderGlow);
     margin-bottom: 1rem;
 }
 
@@ -225,8 +225,8 @@ section {
 
 /* Hover styling for the Sort Button*/
 .sortList button:hover {
-    opacity: 0.70;
-    transform: scale(1.1);
+    opacity: 0.75;
+    /* transform: scale(1.1); */
 }
 
 /* MEDIA QUERIES */
