@@ -8,6 +8,8 @@
     --Dark: #556173;
     --Border: #d3d3d3;
     --MoreDark: black;
+
+    --LightGreen: #77b48a;
 }
 
 * {
@@ -20,8 +22,6 @@
 
 /* Styling for the body section */
 body {
-    background-image: url("/images/body-background.jpg");
-    background-size: cover;
     padding: 5rem;
     width: 100%;
 }
@@ -33,7 +33,7 @@ h2 {
     font-size: 4rem;
     font-family: 'Red Hat Display', sans-serif;
     padding: 1rem;
-    color: var(--Light);
+    color: var(--LightGreen);
 }
 
 /* Style for the H3 heading */
@@ -42,7 +42,7 @@ h3 {
     width: 100%;
     font-size: 3rem;
     padding: 1rem;
-    color: var(--Light);
+    color: var(--LightGreen);
     font-family: 'Red Hat Display', sans-serif;
 }
 
