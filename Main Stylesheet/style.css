@@ -1,7 +1,7 @@
 :root {
     --AddTask: #27ae60;
-    --Edit: #0984e3;
-    --Delete: #d63031;
+    --Edit: #3095cf;
+    --Delete: #83bfe2;
     --Sort: #f1c40f;
     --Light: #ecf0f1;
     --LightGrey: #bdc3c7;
@@ -192,12 +192,12 @@ section {
 /*Color Styling for Edit Button */
 .taskItem .actions .edit {
     margin-right: 0.5rem;
-    background-color: #0984e3;
+    background-color: var(--Edit);
 }
 
 /* Color Styling for Delete Button*/
 .taskItem .actions .delete {
-    background-color: #d63031;
+    background-color: var(--Delete);
 }
 
 /* Style for Strike Through*/
@@ -216,7 +216,7 @@ section {
     padding: 1rem;
     color: #FFF;
     font-weight: 600;
-    background-color: var(--Sort);
+    background-color: var(--LightGreen);
     border-radius: 0.5rem;
     border-style: none;
     cursor: pointer;
