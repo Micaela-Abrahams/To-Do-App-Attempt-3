@@ -10,6 +10,8 @@
     --MoreDark: black;
 
     --LightGreen: #77b48a;
+    --LightBlue: #6eb4de;
+    --LightBlueBackground: #eaf4fa;
 }
 
 * {
@@ -22,6 +24,7 @@
 
 /* Styling for the body section */
 body {
+    background-color: var(--LightBlueBackground);
     padding: 5rem;
     width: 100%;
 }
@@ -31,18 +34,22 @@ h2 {
     display: block;
     width: 100%;
     font-size: 4rem;
+    justify-content: center;
+    text-align: center;
     font-family: 'Red Hat Display', sans-serif;
     padding: 1rem;
-    color: var(--LightGreen);
+    color: var(--LightBlue);
 }
 
 /* Style for the H3 heading */
 h3 {
     display: block;
     width: 100%;
+    justify-content: center;
+    text-align: center;
     font-size: 3rem;
     padding: 1rem;
-    color: var(--LightGreen);
+    color: var(--LightBlue);
     font-family: 'Red Hat Display', sans-serif;
 }
 
@@ -52,7 +59,7 @@ h4 {
     width: 100%;
     font-size: 1.5rem;
     padding: 1rem;
-    color: var(--Light);
+    color: var(--LightBlue);
     font-family: 'Red Hat Display', sans-serif;
 }
 
@@ -70,7 +77,8 @@ section {
     font-size: 1.125rem;
     color: var(--MoreDark);
     border-radius: 0.3rem;
-    border-style: none;
+    border-style: solid;
+    border-color: var(--LightBlue);
     padding: 1rem;
     cursor: pointer;
 }
@@ -83,7 +91,8 @@ section {
     padding: 1rem;
     color: var(--Dark);
     border-radius: 0.3rem;
-    border-style: none;
+    border-style: solid;
+    border-color: var(--LightBlue);
     margin-top: 1rem;
     margin-bottom: 3rem;
 }
@@ -96,7 +105,7 @@ section {
     padding: 1rem;
     border-radius: 0.3rem;
     border-style: none;
-    background-color: var(--AddTask);
+    background-color: var(--LightGreen);
     color: var(--Light);
     cursor: pointer;
     transition: 0.2s ease-out;
@@ -104,7 +113,7 @@ section {
 
 /* Style to make the Add Task Button enlarge & change opacity */
 #add:hover {
-    opacity: 0.70;
+    opacity: 0.90;
     transform: scale(1.1);
 }
 
@@ -223,7 +232,7 @@ section {
 /* MEDIA QUERIES */
 
 /* Media Queries for Tablet Viewport */
-@media screen and (min-width:767px) {
+/* @media screen and (min-width:767px) {
     .output .taskItem {
         width: 105%;
     }
@@ -240,7 +249,7 @@ section {
         width: 50%;
     }
 
-}
+} */
 
 /* Media Queries for Mobile View */
 /* @media screen and (min-width:425px) {
