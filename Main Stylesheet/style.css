@@ -10,7 +10,7 @@
     --LightGreen: hsl(139, 41%, 61%);
     --LightBlue: #6eb4de;
     --LightBlueBackground: #eaf4fa;
-    --BorderGlow: 0px 0px 10px rgb(131, 191, 226);
+    --BorderGlow: 0px 0px 10px rgb(100, 177, 221);
 }
 
 * {
@@ -37,7 +37,7 @@ h2 {
     text-align: center;
     font-family: 'Red Hat Display', sans-serif;
     padding: 1rem;
-    color: var(--LightBlue);
+    color: var(--LightBlueBackground);
 }
 
 /* Style for the H3 heading */
@@ -48,7 +48,7 @@ h3 {
     text-align: center;
     font-size: 3rem;
     padding: 1rem;
-    color: var(--LightBlue);
+    color: var(--LightBlueBackground);
     font-family: 'Red Hat Display', sans-serif;
 }
 
@@ -67,6 +67,21 @@ section {
     margin-bottom: 2rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+}
+
+.heading {
+    display: block;
+    width: 100%;
+    padding: 3rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    background-image: url("/images/hydrangea.jpg");
+    background-size: cover;
+    background-position: 100%;
+    border-style: solid;
+    border-width: 6px;
+    border-color: white;
+    box-shadow: var(--BorderGlow);
 }
 
 /* Styling for calendar where user will select date entry */
