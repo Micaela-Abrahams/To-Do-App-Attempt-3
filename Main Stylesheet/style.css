@@ -52,6 +52,17 @@ h3 {
     font-family: 'Red Hat Display', sans-serif;
 }
 
+.output h3 {
+    display: block;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    font-size: 3rem;
+    padding: 1rem;
+    color: var(--LightBlue);
+    font-family: 'Red Hat Display', sans-serif;
+}
+
 /* Style for the H4 heading */
 h4 {
     display: block;
