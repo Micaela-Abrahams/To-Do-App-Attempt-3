@@ -63,6 +63,8 @@ h3 {
     font-family: 'Red Hat Display', sans-serif;
 }
 
+
+
 /* Style for the H4 heading */
 h4 {
     display: block;
@@ -143,8 +145,21 @@ section {
     /* transform: scale(1.1); */
 }
 
-/* STYLING FOR THINGS TO DO SECTION */
+/* Style for the Incompleted List Items */
 .output .taskItem {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFF;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--BorderGlow);
+    margin-bottom: 1rem;
+}
+
+/* Style for the Completed List Items */
+#completedList .taskItem {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -248,6 +263,9 @@ section {
     cursor: pointer;
     transition: 0.2s ease-out;
 }
+
+
+
 
 /* Hover styling for the Sort Button*/
 .sortList button:hover {
