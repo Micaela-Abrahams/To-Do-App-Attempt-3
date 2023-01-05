@@ -262,6 +262,10 @@ button.delete {
     background-color: var(--Delete);
 }
 
+/* Style for Save Button */
+
+
+
 /* Style for Strike Through*/
 .taskItem.done .taskContent input {
     text-decoration: line-through;
