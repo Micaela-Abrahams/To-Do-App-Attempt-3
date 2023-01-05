@@ -51,7 +51,6 @@ function displayTasks () {
 	tasks.forEach(task => {
 		const taskItem = document.createElement('div');
 		taskItem.classList.add('taskItem');
-		
 
 		const label = document.createElement('label');
 		const input = document.createElement('input');
@@ -59,6 +58,7 @@ function displayTasks () {
 		const content = document.createElement('div');
 		const actions = document.createElement('div');
 		const edit = document.createElement('button');
+		
 		const deleteButton = document.createElement('button');
 		const date = document.createElement('div');
 		
@@ -67,7 +67,7 @@ function displayTasks () {
 
 		// An event listener is added to the input element to listen for a change event (when the checkbox is checked or unchecked)
 		// If checkbox is checked the task is done - moved to completed list
-		//If checkbox is unchecked the task remains "Incompleted"
+		//If checkbosx is unchecked the task remains "Incompleted"
 		input.addEventListener('change', () => {
 		task.done = input.checked;
 		localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -78,9 +78,10 @@ function displayTasks () {
 		date.classList.add('taskDate');
 		actions.classList.add('actions');
 		edit.classList.add('edit');
+
 		deleteButton.classList.add('delete');
 		
-		content.innerHTML = `<input type="text" value="${task.content}">`;
+		content.innerHTML = `<input type="text" value="${task.content}" readonly>`;
 		date.innerHTML = `<input type="date" value="${task.date}" readonly>`;
 		edit.innerHTML = 'Edit';
 		deleteButton.innerHTML = 'Delete';
@@ -125,20 +126,21 @@ function displayTasks () {
 
 		
 		edit.addEventListener('click', () => {
-		content.innerHTML = `<input type="text" value="${task.content}" class="editContent">`;
-		date.innerHTML = `<input type="date" value="${task.date}" class="editDate">`;
-		actions.replaceChild(save, edit);
-		  });
+			content.innerHTML = `<input type="text" value="${task.content}">`;
+			date.innerHTML = `<input type="date" value="${task.date}">`;
+			edit.innerHTML = 'Save';
+
+		});
 
 		
-		// edit.addEventListener('click', () => {
-		// 	task.content = content.querySelector('input').value;
-		// 	task.date = date.querySelector('input').value;
-		// 	content.innerHTML = `<input type="text" value="${task.content}" readonly>`;
-		// 	date.innerHTML = `<input type="date" value="${task.date}" readonly>`;
-		// 	edit.innerHTML = 'Edit';
-		// 	localStorage.setItem('tasks', JSON.stringify(tasks));
-		//   });
+		edit.addEventListener('click', () => {
+			task.content = content.querySelector('input').value;
+			task.date = date.querySelector('input').value;
+			content.innerHTML = `<input type="text" value="${task.content}" readonly>`;
+			date.innerHTML = `<input type="date" value="${task.date}" readonly>`;
+			edit.innerHTML = 'Edit';
+			localStorage.setItem('tasks', JSON.stringify(tasks));
+		  });
 		
 		//Functionality for 'Delete' Button
 			deleteButton.addEventListener('click', () => {

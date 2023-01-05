@@ -52,7 +52,20 @@ h3 {
     font-family: 'Red Hat Display', sans-serif;
 }
 
+/* H3 title for the Incompleted List */
 .output h3 {
+    display: block;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    font-size: 3rem;
+    padding: 1rem;
+    color: var(--LightBlue);
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+/* H3 title for the Completed List */
+#completedList h3 {
     display: block;
     width: 100%;
     justify-content: center;
@@ -237,7 +250,15 @@ section {
 }
 
 /* Color Styling for Delete Button*/
-.taskItem .actions .delete {
+button.delete {
+    display: block;
+    padding: 1rem;
+    font-size: 1.125rem;
+    border-radius: 0.25rem;
+    border-style: none;
+    color: #FFF;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
     background-color: var(--Delete);
 }
 
@@ -263,9 +284,6 @@ section {
     cursor: pointer;
     transition: 0.2s ease-out;
 }
-
-
-
 
 /* Hover styling for the Sort Button*/
 .sortList button:hover {
