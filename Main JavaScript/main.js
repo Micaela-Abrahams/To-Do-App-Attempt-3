@@ -45,12 +45,13 @@ function displayTasks () {
 	completedList.innerHTML = '';
 
 	const completedListH3 = document.createElement('h3');
-	completedListH3.innerHTML = 'Completed Tasks:';
-	completedList.appendChild(completedListH3);
+  	completedListH3.innerHTML = 'Completed Tasks:';
+  	completedList.appendChild(completedListH3);
 
 	tasks.forEach(task => {
 		const taskItem = document.createElement('div');
 		taskItem.classList.add('taskItem');
+		
 
 		const label = document.createElement('label');
 		const input = document.createElement('input');
@@ -63,6 +64,15 @@ function displayTasks () {
 		
 		input.type = 'checkbox';
 		input.checked = task.done;
+
+		// An event listener is added to the input element to listen for a change event (when the checkbox is checked or unchecked)
+		// If checkbox is checked the task is done - moved to completed list
+		//If checkbox is unchecked the task remains "Incompleted"
+		input.addEventListener('change', () => {
+		task.done = input.checked;
+		localStorage.setItem('tasks', JSON.stringify(tasks));
+		displayTasks();
+		  });
 		
 		content.classList.add('taskContent');
 		date.classList.add('taskDate');
@@ -70,7 +80,7 @@ function displayTasks () {
 		edit.classList.add('edit');
 		deleteButton.classList.add('delete');
 		
-		content.innerHTML = `<input type="text" value="${task.content}" readonly>`;
+		content.innerHTML = `<input type="text" value="${task.content}">`;
 		date.innerHTML = `<input type="date" value="${task.date}" readonly>`;
 		edit.innerHTML = 'Edit';
 		deleteButton.innerHTML = 'Delete';
@@ -84,115 +94,59 @@ function displayTasks () {
 		taskItem.appendChild(content);
 		taskItem.appendChild(date);
 		taskItem.appendChild(actions);
+
+		
+    // Append the task item to the task list
+    taskList.appendChild(taskItem);
 		
 		
-		input.addEventListener('change', () => {
-			if (input.checked) {
-			  content.classList.add('completed');
-			  actions.removeChild(edit);
-			  label.removeChild(input);
-			  label.removeChild(span);
-			  taskItem.appendChild(deleteButton);
-			  completedList.appendChild(taskItem);
-			  task.movedToCompleted = true;
-			} else {
-			  content.classList.remove('completed');
-			  content.classList.add('completed');
-			  actions.removeChild(edit);
-			  label.removeChild(input);
-			  label.removeChild(span);
-			  taskItem.appendChild(deleteButton);
-			  completedList.appendChild(taskItem);
-			  task.movedToCompleted = false;
+		// input.addEventListener('change', () => {
+		// 	if (input.checked) {
+		// 	  content.classList.add('completed');
+		// 	  actions.removeChild(edit);
+		// 	  label.removeChild(input);
+		// 	  label.removeChild(span);
+		// 	  taskItem.appendChild(deleteButton);
+		// 	  completedList.appendChild(taskItem);
+		// 	  task.movedToCompleted = true;
+		// 	} else {
+		// 	  content.classList.remove('completed');
+		// 	  content.classList.add('completed');
+		// 	  actions.removeChild(edit);
+		// 	  label.removeChild(input);
+		// 	  label.removeChild(span);
+		// 	  taskItem.appendChild(deleteButton);
+		// 	  completedList.appendChild(taskItem);
+		// 	  task.movedToCompleted = false;
 
-			//   if (task.movedToCompleted) {
-			// 	taskItem.appendChild(edit);
-			// 	taskList.appendChild(taskItem);
-			// 	task.movedToCompleted = true;
-			//   }
-			}
-		  })
-
-		// if (task.date == '') {
-		// 	date.classList.add('taskDateBlank');
-		// }
-		
-		// if (task.done) {
-		// 			taskItem.classList.add('done');
-		// 		}
-				
-		// 		input.addEventListener('change', (e) => {
-		// 			task.done = e.target.checked;
-		// 			localStorage.setItem('tasks', JSON.stringify(tasks));
-
-		// 			if (task.done) {
-		// 				taskItem.classList.add('done');
-		// 			} else {
-		// 				taskItem.classList.remove('done');
-		// 			}
-
-		// 			displayTasks()
-
-		// 		})
-
-		// edit.addEventListener('click', (e) => {
-		// 	const input = content.querySelector('input');
-		// 	input.removeAttribute('readonly');
-		// 	input.focus();
 			
-		// 	input.addEventListener('blur', (e) => {
-		// 		input.setAttribute('readonly', true);
-		// 		task.content = e.target.value;
-		// 		localStorage.setItem('tasks', JSON.stringify(tasks));
-		// 		displayTasks()
-		// 	})
-		// })
+		// 	}
+		//   })
 
+		
 		edit.addEventListener('click', () => {
-			content.innerHTML = `<input type="text" value="${task.content}">`;
-			date.innerHTML = `<input type="date" value="${task.date}">`;
-			edit.innerHTML = 'Save';
-
-		});
-
-		// edit.addEventListener('click', (e) => {
-			
-		// 	const dateInput = content.querySelector('dueDate');
-		// 	dateInput.removeAttribute('readonly');
-		// 	dateInput.focus();
-			
-		// 	dateInput.addEventListener('blur', (e) => {
-		// 		dateInput.setAttribute('readonly', true);
-		// 		task.date = e.target.value;
-		// 		localStorage.setItem('tasks', JSON.stringify(tasks));
-		// 		displayTasks()
-		// 	})
-		// }) 
-
-		edit.addEventListener('click', () => {
-			task.content = content.querySelector('input').value;
-			task.date = date.querySelector('input').value;
-			content.innerHTML = `<input type="text" value="${task.content}" readonly>`;
-			date.innerHTML = `<input type="date" value="${task.date}" readonly>`;
-			edit.innerHTML = 'Edit';
-			localStorage.setItem('tasks', JSON.stringify(tasks));
+		content.innerHTML = `<input type="text" value="${task.content}" class="editContent">`;
+		date.innerHTML = `<input type="date" value="${task.date}" class="editDate">`;
+		actions.replaceChild(save, edit);
 		  });
+
+		
+		// edit.addEventListener('click', () => {
+		// 	task.content = content.querySelector('input').value;
+		// 	task.date = date.querySelector('input').value;
+		// 	content.innerHTML = `<input type="text" value="${task.content}" readonly>`;
+		// 	date.innerHTML = `<input type="date" value="${task.date}" readonly>`;
+		// 	edit.innerHTML = 'Edit';
+		// 	localStorage.setItem('tasks', JSON.stringify(tasks));
+		//   });
 		
 		//Functionality for 'Delete' Button
-		// deleteButton.addEventListener('click', (e) => {
-		// 	tasks = tasks.filter(t => t != task);
-		// 	localStorage.setItem('tasks', JSON.stringify(tasks));
-		// 	displayTasks()
-		// })
-
-		deleteButton.addEventListener('click', () => {
+			deleteButton.addEventListener('click', () => {
 			tasks.splice(tasks.indexOf(task), 1);
 			localStorage.setItem('tasks', JSON.stringify(tasks));
 			completedList.removeChild(taskItem);
 		  });
 		  
-
-
 		  if (task.done) {
 			content.classList.add('completed');
 			actions.removeChild(edit);
