@@ -4,6 +4,10 @@ window.addEventListener('load', () => {
 	const newTaskForm = document.querySelector('#newTaskForm');
 	const sortBtn = document.querySelector('#sortBtn');
 
+	// To-Do items are sorted alphabetically after the session has been refreshed
+	tasks.sort((a, b) => a.content.localeCompare(b.content));
+
+
 	//Submit form when 'Add' button clicked
 	newTaskForm.addEventListener('submit', e => {
 		e.preventDefault();
@@ -44,6 +48,7 @@ function displayTasks () {
 	taskList.innerHTML = '';
 	completedList.innerHTML = '';
 
+	//H3 element created to display "Completed Task title"
 	const completedListH3 = document.createElement('h3');
   	completedListH3.innerHTML = 'Completed Tasks:';
   	completedList.appendChild(completedListH3);
@@ -58,16 +63,15 @@ function displayTasks () {
 		const content = document.createElement('div');
 		const actions = document.createElement('div');
 		const edit = document.createElement('button');
-		
 		const deleteButton = document.createElement('button');
 		const date = document.createElement('div');
-		
+
 		input.type = 'checkbox';
 		input.checked = task.done;
 
 		// An event listener is added to the input element to listen for a change event (when the checkbox is checked or unchecked)
 		// If checkbox is checked the task is done - moved to completed list
-		//If checkbosx is unchecked the task remains "Incompleted"
+		//If checkbox is unchecked the task remains "Incompleted"
 		input.addEventListener('change', () => {
 		task.done = input.checked;
 		localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -81,7 +85,7 @@ function displayTasks () {
 
 		deleteButton.classList.add('delete');
 		
-		content.innerHTML = `<input type="text" value="${task.content}" readonly>`;
+		content.innerHTML = `<input type="text" value="${task.content}">`;
 		date.innerHTML = `<input type="date" value="${task.date}" readonly>`;
 		edit.innerHTML = 'Edit';
 		deleteButton.innerHTML = 'Delete';
@@ -98,50 +102,57 @@ function displayTasks () {
 
 		
     // Append the task item to the task list
-    taskList.appendChild(taskItem);
+    	taskList.appendChild(taskItem);
+	
 		
-		
-		// input.addEventListener('change', () => {
-		// 	if (input.checked) {
-		// 	  content.classList.add('completed');
-		// 	  actions.removeChild(edit);
-		// 	  label.removeChild(input);
-		// 	  label.removeChild(span);
-		// 	  taskItem.appendChild(deleteButton);
-		// 	  completedList.appendChild(taskItem);
-		// 	  task.movedToCompleted = true;
-		// 	} else {
-		// 	  content.classList.remove('completed');
-		// 	  content.classList.add('completed');
-		// 	  actions.removeChild(edit);
-		// 	  label.removeChild(input);
-		// 	  label.removeChild(span);
-		// 	  taskItem.appendChild(deleteButton);
-		// 	  completedList.appendChild(taskItem);
-		// 	  task.movedToCompleted = false;
+		// edit.addEventListener('click', () => {
+		// 	content.innerHTML = `<input type="text" value="${task.content}">`;
+		// 	date.innerHTML = `<input type="date" value="${task.date}">`;
+		// 	edit.innerHTML = 'Save';
 
-			
-		// 	}
-		//   })
+		// });
 
-		
+		// Event Listeners for the Edit & Save Buttons
 		edit.addEventListener('click', () => {
-			content.innerHTML = `<input type="text" value="${task.content}">`;
-			date.innerHTML = `<input type="date" value="${task.date}">`;
-			edit.innerHTML = 'Save';
+			// Clear the contents of the input field
+			content.innerHTML = '';
+		  
+			// Create a new input field for editing the task
+			const editInput = document.createElement('input');
+			editInput.type = 'text';
 
-		});
+			// Clear the text in the input field
+  			editInput.value = '';
+  			content.appendChild(editInput);
 
-		
-		edit.addEventListener('click', () => {
-			task.content = content.querySelector('input').value;
-			task.date = date.querySelector('input').value;
-			content.innerHTML = `<input type="text" value="${task.content}" readonly>`;
-			date.innerHTML = `<input type="date" value="${task.date}" readonly>`;
-			edit.innerHTML = 'Edit';
-			localStorage.setItem('tasks', JSON.stringify(tasks));
+		  	// Set the focus on the input field when edit button is clicked
+			editInput.focus();
+		  
+			// Create a save button
+			const saveButton = document.createElement('button');
+			saveButton.innerHTML = 'Save';
+			saveButton.classList.add('save-button');//Class added to the save button
+			content.appendChild(saveButton);
+
+			// Hide the edit button after the edit button is clicked
+  			edit.style.display = 'none';
+		  
+			// Add a click event listener to the save button
+			saveButton.addEventListener('click', () => {
+			  // Update the task's content
+			  task.content = editInput.value;
+		  
+			  // Update the task in local storage
+			  localStorage.setItem('tasks', JSON.stringify(tasks));
+		  
+			  // Re-render the task list
+			  displayTasks();
+
+			  // Show the edit button again after the save button is clicked
+    		 edit.style.display = 'inline-block';
+			});
 		  });
-		
+		  
 		//Functionality for 'Delete' Button
 			deleteButton.addEventListener('click', () => {
 			tasks.splice(tasks.indexOf(task), 1);
@@ -178,8 +189,10 @@ sortBtn.addEventListener('click', (e,)=> {
 		}
 		return 0;
 	});
+
 	//Store re-ordered tasks to local storage
 	localStorage.setItem('tasks', JSON.stringify(tasks));		
 	displayTasks();
+
 })
 
