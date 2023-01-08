@@ -30,6 +30,47 @@ body {
     width: 100%;
 }
 
+/* STYLING FOR THE INDEX HTML */
+#create-todo-instruction {
+    display: block;
+    justify-content: center;
+    text-align: center;
+    color: var(--Light)
+}
+
+#create-todo-header {
+    display: block;
+    width: 100%;
+    padding: 3rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    background-image: url("/images/hydrangea.jpg");
+    background-size: cover;
+    background-position: 100%;
+    border-style: solid;
+    border-width: 6px;
+    border-color: white;
+    box-shadow: var(--BorderGlow);
+}
+
+#create-todo-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    font-size: 1.125rem;
+    padding: 1rem;
+    color: #FFF;
+    font-weight: 600;
+    background-color: var(--LightGreen);
+    border-radius: 0.5rem;
+    border-style: none;
+    cursor: pointer;
+    text-decoration: underline var(--LightGreen);
+}
+
+/* STYLING FOR THE CREATE TODO HTML */
+
 /* Style for the H1 heading */
 h2 {
     display: block;
@@ -39,7 +80,7 @@ h2 {
     text-align: center;
     font-family: 'Red Hat Display', sans-serif;
     padding: 1rem;
-    color: var(--LightBlueBackground);
+    color: var(--Light);
 }
 
 /* Style for the H3 heading */
@@ -77,7 +118,6 @@ h3 {
     color: var(--LightBlue);
     font-family: 'Red Hat Display', sans-serif;
 }
-
 
 
 /* Style for the H4 heading */
@@ -272,7 +312,7 @@ button.save-button {
     color: #FFF;
     cursor: pointer;
     margin-left: 5%;
-    background-color: var(--Save);
+    background-color: var(--LightGreen);
 }
 
 /* Styling for Cancel Button */
