@@ -6,6 +6,8 @@
     --Dark: #556173;
     --Border: #d3d3d3;
     --MoreDark: black;
+    --Save: #49AC90;
+    --Cancel: #59A2DB;
 
     --LightGreen: hsl(139, 41%, 61%);
     --LightBlue: #6eb4de;
@@ -133,7 +135,6 @@ section {
     border-radius: 0.3rem;
     border-style: solid;
     border-color: var(--LightGrey);
-    ;
     margin-top: 1rem;
     margin-bottom: 3rem;
 }
@@ -263,8 +264,28 @@ button.delete {
 }
 
 /* Style for Save Button */
+button.save-button {
+    padding: 1rem;
+    font-size: 1.125rem;
+    border-radius: 0.25rem;
+    border-style: none;
+    color: #FFF;
+    cursor: pointer;
+    margin-left: 5%;
+    background-color: var(--Save);
+}
 
-
+/* Styling for Cancel Button */
+button.cancel-button {
+    padding: 1rem;
+    font-size: 1.125rem;
+    border-radius: 0.25rem;
+    border-style: none;
+    color: #FFF;
+    cursor: pointer;
+    margin-left: 1.5%;
+    background-color: var(--Cancel);
+}
 
 /* Style for Strike Through*/
 .taskItem.done .taskContent input {

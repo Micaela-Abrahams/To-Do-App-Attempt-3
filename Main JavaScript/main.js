@@ -3,6 +3,8 @@ window.addEventListener('load', () => {
     tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 	const newTaskForm = document.querySelector('#newTaskForm');
 	const sortBtn = document.querySelector('#sortBtn');
+	const inputField = document.querySelector('#inputField'); //
+	
 
 	// To-Do items are sorted alphabetically after the session has been refreshed
 	tasks.sort((a, b) => a.content.localeCompare(b.content));
@@ -101,17 +103,9 @@ function displayTasks () {
 		taskItem.appendChild(actions);
 
 		
-    // Append the task item to the task list
+    	// Append the task item to the task list
     	taskList.appendChild(taskItem);
 	
-		
-		// edit.addEventListener('click', () => {
-		// 	content.innerHTML = `<input type="text" value="${task.content}">`;
-		// 	date.innerHTML = `<input type="date" value="${task.date}">`;
-		// 	edit.innerHTML = 'Save';
-
-		// });
-
 		// Event Listeners for the Edit & Save Buttons
 		edit.addEventListener('click', () => {
 			// Clear the contents of the input field
@@ -128,11 +122,18 @@ function displayTasks () {
 		  	// Set the focus on the input field when edit button is clicked
 			editInput.focus();
 		  
-			// Create a save button
+			// Create a save & cancel button
 			const saveButton = document.createElement('button');
+			const cancelButton = document.createElement('button')
+
 			saveButton.innerHTML = 'Save';
+			cancelButton.innerHTML = 'Cancel';
+
 			saveButton.classList.add('save-button');//Class added to the save button
+			cancelButton.classList.add('cancel-button');
+
 			content.appendChild(saveButton);
+			content.append(cancelButton);
 
 			// Hide the edit button after the edit button is clicked
   			edit.style.display = 'none';
@@ -144,13 +145,23 @@ function displayTasks () {
 		  
 			  // Update the task in local storage
 			  localStorage.setItem('tasks', JSON.stringify(tasks));
-		  
+
+
 			  // Re-render the task list
 			  displayTasks();
 
 			  // Show the edit button again after the save button is clicked
     		 edit.style.display = 'inline-block';
 			});
+
+			//Add a click event listener to the cancel button
+			cancelButton.addEventListener('click', () =>{
+				 cancelButton.style.display = 'none'; //Hide Cancel Button
+				 saveButton.style.display = 'none'; //Hide Save Button
+				 edit.style.display = 'inline-block'; //Display Edit Button
+			})
+
+
 		  });
 		  
 		//Functionality for 'Delete' Button
